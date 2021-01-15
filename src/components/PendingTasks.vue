@@ -25,22 +25,22 @@
 export default {
   name: 'PendingTasks',
   props: {
-    listTask: String
+    listTask: Array
   },
   data(){
     return{
       checked: false,
       completeTask: [],
-      state:''
     }
   },
   methods: {
     stateTasks (){
       let state = this.checked;
       if(state != false){
-        this.completeTask.push(state.task)
+        this.completeTask.push(state)
+        console.log(this.completeTask)
+        this.checked= ''
       }
-      console.log(state)
     }
   },
 }
